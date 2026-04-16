@@ -1,0 +1,498 @@
+<!DOCTYPE HTML>
+<html lang='ru'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife — Спортивное питание</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href = "css/stile1.css">
+        
+</head>
+<body>
+    <script>
+    const productsData1 = [
+    {id: 0, name: 'Протеин Whey', price: 2500, img: 'https://pcdn.goldapple.ru/p/p/19000015615/web/696d674d61696e5064708ddc491ae236f2f.jpg'},
+                    {id: 1, name: 'BCAA 2:1:1', price: 1200, img: 'https://pcdn.goldapple.ru/p/p/19000318482/web/696d674d61696e5064708ddc596983b7696.jpg'},
+                    {id: 2, name: 'Креатин', price: 800, img: 'https://avatars.mds.yandex.net/i?id=3d68dcefb658c04d18937d3c859afb9bef7f9447-5255574-images-thumbs&n=13'},
+                    {id: 3, name: 'Гейнер', price: 3200, img: 'https://avatars.mds.yandex.net/i?id=38ed94732d3cdd8fefdb6e89c95fc36ea748b873-4435477-images-thumbs&n=13'},
+                    {id: 4, name: 'Омега-3', price: 950, img: 'https://avatars.mds.yandex.net/i?id=7b3aee380ec20e0c3d408e54185398b515d9b6df-15541730-images-thumbs&n=13'},
+                    {id: 5, name: 'Витамины', price: 1500, img: 'https://avatars.mds.yandex.net/i?id=365e760ae8ab8922a954bee866401b73da286d8a-4011331-images-thumbs&n=13'},
+                    {id: 6, name: 'Батончик', price: 150, img: 'https://avatars.mds.yandex.net/i?id=7545cd720e5d2efc982861c1a3e6646729072c90-4405396-images-thumbs&n=13'},
+                    {id: 7, name: 'Шейкер', price: 600, img: 'https://avatars.mds.yandex.net/i?id=b0bab2abffc25314f217a81de3070af7de02dc75-4012443-images-thumbs&n=13'},
+                    {id: 8, name: 'Магнезия', price: 450, img: 'https://avatars.mds.yandex.net/i?id=aa50f976de5651d35f005c7428f4f3ee1faa0b6f-5295252-images-thumbs&n=13'},
+                    {id: 9, name: 'L-Карнитин', price: 1100, img: 'https://avatars.mds.yandex.net/i?id=93e973cb7e8a9309ea05a3314539dae8bc439784-10233716-images-thumbs&n=13'}
+                ];
+            </script>
+<div class="site-wrapper">
+    <header class="main-header">
+        <div class="container">
+            <div class="logo" onclick="showPage('home')">Fit<span>Life</span></div>
+            <nav class="nav">
+                <a onclick="showPage('shop')">Магазин</a>
+                <a onclick="showPage('blog')">Блог</a>
+                <a onclick="showPage('contacts')">Контакты</a>
+            </nav>
+        </div>
+    </header>
+<!-- ГЛАВНАЯ СТРАНИЦА (ЛЕНДИНГ) -->
+<section id="home-page" class="page-section active">
+    <div class="container" style="max-width: 1500px; margin: 0 auto; padding: 40px 20px;">
+        
+        <!-- Описание магазина -->
+        <header style="text-align: center; margin-bottom: 60px;">
+            <h1 style="font-family: 'Oswald'; font-size: 50px; text-transform: uppercase;">FitLife — Энергия твоего успеха</h1>
+            <p style="font-size: 20px; color: #555; max-width: 800px; margin: 20px auto; line-height: 1.6;">
+                Мы собрали лучшие мировые бренды спортивного питания в одном месте. 
+                FitLife — это не просто магазин, это сообщество людей, выбирающих результат и качество.
+            </p>
+            <button onclick="showPage('shop')" style="padding: 15px 40px; background: #ff6600; color: white; border: none; border-radius: 5px; cursor: pointer; font-family: 'Oswald'; font-size: 20px; transition: 0.3s;">
+                ПЕРЕЙТИ В КАТАЛОГ
+            </button>
+        </header>
+
+        <!-- Блок "Почему мы" -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 80px;">
+            <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center;">
+                <span style="font-size: 40px;">🛡️</span>
+                <h3 style="font-family: 'Oswald'; margin: 15px 0;">100% Оригинал</h3>
+                <p>Только сертифицированная продукция от официальных дистрибьюторов.</p>
+            </div>
+            <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center;">
+                <span style="font-size: 40px;">⚡</span>
+                <h3 style="font-family: 'Oswald'; margin: 15px 0;">Быстрый старт</h3>
+                <p>Помогаем подобрать комплекс под ваши конкретные цели и тип телосложения.</p>
+            </div>
+            <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center;">
+                <span style="font-size: 40px;">📦</span>
+                <h3 style="font-family: 'Oswald'; margin: 15px 0;">Доставка в срок</h3>
+                <p>Отправляем заказы ежедневно. Ваша тренировка не сорвется!</p>
+            </div>
+        </div>
+
+        <!-- Слайдер товаров -->
+        <div id="home-slider" style="display: flex; 
+    flex-direction: column; /* Карточки в колонку */
+    gap: 20px; 
+    height: 700px;         /* Обязательно: высота, после которой начнется скролл */
+    overflow-y: auto;      /* Прокрутка по вертикали */
+    padding: 20px; 
+    scroll-behavior: smooth;
+    border: 1px solid #eee;
+    border-radius: 15px;">
+            <!-- Товары вставит JS -->
+            <script>
+                function renderHomeSlider() {
+                    const slider = document.getElementById('home-slider');
+                    if (!slider) return;
+                    
+                    slider.innerHTML = productsData1.slice(0, 10).map(p => `
+                        <div onclick="showPage('shop')" style="
+                            display: flex;         /* Внутренности карточки тоже можно в ряд */
+                            align-items: center; 
+                            gap: 20px;
+                            background: white; 
+                            padding: 15px; 
+                            border-radius: 15px; 
+                            border: 1px solid #eee; 
+                            cursor: pointer; 
+                            transition: 0.3s;
+                            flex-shrink: 0;        /* Чтобы карточки не сжимались по высоте */
+                        ">
+                            <img src="${p.img}" style="width: 80px; height: 80px; object-fit: contain;">
+                            <div style="text-align: left;">
+                                <h3 style="font-family: 'Oswald'; font-size: 18px; margin: 0;">${p.name}</h3>
+                                <span style="color: #ff6600; font-weight: bold;">${p.price} ₽</span>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+                renderHomeSlider();
+                </script>
+            
+        </div>
+    </div>
+</section>
+
+    
+    
+    
+
+<section id="shop-page" class="page-section" style="display: none;">
+    <main class="main-content">
+        <div class="shop-layout" style="display: flex; gap: 20px; align-items: flex-start; max-width: 1200px; margin: 0 auto; padding: 20px;">
+            
+            <div class="content-area" style="flex: 1;">
+                <!-- 1. КАТАЛОГ -->
+                <section id="catalog-section">
+                    <h1 style="font-family: 'Oswald', sans-serif;">Каталог товаров</h1>
+                    <div class="product-grid" id="main-catalog-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+                        <!-- Товары вставит скрипт ниже -->
+                    </div>
+                </section>
+    
+                <!-- 2. ДЕТАЛИ ТОВАРА -->
+                <section id="product-detail-page" style="display: none;">
+                    <button onclick="showCatalog()" style="background: none; border: none; cursor: pointer; font-family: 'Oswald'; font-size: 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 5px;">
+                       <span>&lt;</span> Назад
+                    </button>
+                    <div style="background: white; padding: 30px; border-radius: 15px; display: flex; gap: 30px; border: 1px solid #eee;">
+                        <div id="detail-img" style="flex: 1; height: 300px; display: flex; align-items: center; justify-content: center; background: #f9f9f9; border-radius: 10px;"></div>
+                        <div style="flex: 1;">
+                            <h1 id="detail-title" style="font-family: 'Oswald'; margin: 0 0 10px 0; font-size: 32px;"></h1>
+                            <p id="detail-price" style="font-size: 28px; color: #ff6600; font-weight: 700; font-family: 'Oswald'; margin-bottom: 20px;"></p>
+                            
+                            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                                <div style="display: flex; align-items: center; border: 1px solid #ddd; border-radius: 5px; overflow: hidden;">
+                                    <button onclick="changeQty(-1)" style="padding: 10px 15px; border: none; background: #eee; cursor: pointer; font-size: 18px;">-</button>
+                                    <input type="number" id="detail-qty" value="1" min="1" style="width: 50px; text-align: center; border: none; font-family: 'Oswald'; font-size: 18px; -moz-appearance: textfield;">
+                                    <button onclick="changeQty(1)" style="padding: 10px 15px; border: none; background: #eee; cursor: pointer; font-size: 18px;">+</button>
+                                </div>
+                                <button onclick="addToCart()" style="padding: 12px 25px; background: #ff6600; color: white; border: none; border-radius: 5px; cursor: pointer; font-family: 'Oswald'; font-size: 16px; text-transform: uppercase;">В корзину</button>
+                            </div>
+                            <p style="color: #666; font-size: 16px; line-height: 1.5;">Лучший выбор для ваших тренировок! Гарантированное качество и результат.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+    
+            <!-- 3. КОРЗИНА -->
+            <aside style="width: 300px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: sticky; top: 20px; border: 1px solid #eee;">
+                <h2 style="font-family: 'Oswald'; margin-top: 0; font-size: 24px;">Корзина</h2>
+                <div id="cart-items-list" style="margin: 20px 0; max-height: 400px; overflow-y: auto;">
+                    <p style="color: #999; text-align: center;">Ваша корзина пуста</p>
+                </div>
+                <div style="border-top: 2px solid #f4f4f4; padding-top: 15px;">
+                    <div style="display: flex; justify-content: space-between; font-family: 'Oswald'; font-weight: bold; font-size: 20px;">
+                        <span>Итого:</span> <span id="cart-total-price">0 ₽</span>
+                    </div>
+                </div>
+                <button type="button" class="checkout-btn" onclick="checkout()">Оформить заказ</button>
+                <script>
+                    function checkout() {
+    // 1. Проверяем, не пуста ли корзина
+    if (cart.length === 0) {
+        alert("Ваша корзина пуста. Добавьте товары перед оформлением заказа.");
+        return;
+    }
+
+    // 2. Выводим уведомление об успехе
+    alert("Заказ успешно оформлен! Наш менеджер свяжется с вами в ближайшее время.");
+
+    // 3. Очищаем массив корзины
+    cart = [];
+
+    // 4. Перерисовываем корзину, чтобы она стала пустой визуально
+    renderCart();
+    
+    // (Опционально) Перенаправляем пользователя на главную
+    showPage('home');
+}
+                </script>
+            </aside>
+        </div>
+    
+        <script>
+            // 1. Глобальные данные (теперь доступны везде)
+            const productsData = [
+            {id: 0, name: 'Протеин Whey', price: 2500, img: 'https://pcdn.goldapple.ru/p/p/19000015615/web/696d674d61696e5064708ddc491ae236f2f.jpg'},
+                            {id: 1, name: 'BCAA 2:1:1', price: 1200, img: 'https://pcdn.goldapple.ru/p/p/19000318482/web/696d674d61696e5064708ddc596983b7696.jpg'},
+                            {id: 2, name: 'Креатин', price: 800, img: 'https://avatars.mds.yandex.net/i?id=3d68dcefb658c04d18937d3c859afb9bef7f9447-5255574-images-thumbs&n=13'},
+                            {id: 3, name: 'Гейнер', price: 3200, img: 'https://avatars.mds.yandex.net/i?id=38ed94732d3cdd8fefdb6e89c95fc36ea748b873-4435477-images-thumbs&n=13'},
+                            {id: 4, name: 'Омега-3', price: 950, img: 'https://avatars.mds.yandex.net/i?id=7b3aee380ec20e0c3d408e54185398b515d9b6df-15541730-images-thumbs&n=13'},
+                            {id: 5, name: 'Витамины', price: 1500, img: 'https://avatars.mds.yandex.net/i?id=365e760ae8ab8922a954bee866401b73da286d8a-4011331-images-thumbs&n=13'},
+                            {id: 6, name: 'Батончик', price: 150, img: 'https://avatars.mds.yandex.net/i?id=7545cd720e5d2efc982861c1a3e6646729072c90-4405396-images-thumbs&n=13'},
+                            {id: 7, name: 'Шейкер', price: 600, img: 'https://avatars.mds.yandex.net/i?id=b0bab2abffc25314f217a81de3070af7de02dc75-4012443-images-thumbs&n=13'},
+                            {id: 8, name: 'Магнезия', price: 450, img: 'https://avatars.mds.yandex.net/i?id=aa50f976de5651d35f005c7428f4f3ee1faa0b6f-5295252-images-thumbs&n=13'},
+                            {id: 9, name: 'L-Карнитин', price: 1100, img: 'https://avatars.mds.yandex.net/i?id=93e973cb7e8a9309ea05a3314539dae8bc439784-10233716-images-thumbs&n=13'}
+                        ];
+            
+    
+            let cart = [];
+            let currentProductId = null;
+    
+            // Отрисовка каталога при загрузке
+            function renderCatalog() {
+                const grid = document.getElementById('main-catalog-grid');
+                grid.innerHTML = productsData.map(p => `
+                    <div class="product-card" onclick="openProduct(${p.id})" style="cursor:pointer; background: white; padding: 15px; border-radius: 10px; border: 1px solid #eee; text-align: center; transition: 0.3s;">
+                        <img src="${p.img}" style="width: 100%; height: 120px; object-fit: contain; margin-bottom: 10px;">
+                        <h3 style="font-family: 'Oswald'; font-size: 16px; margin: 5px 0;">${p.name}</h3>
+                        <span style="color: #ff6600; font-weight: bold; font-family: 'Oswald';">${p.price} ₽</span>
+                    </div>
+                `).join('');
+            }
+    
+            // Открыть карточку товара
+            function openProduct(id) {
+                const product = productsData.find(p => p.id === id);
+                if(!product) return;
+    
+                currentProductId = id;
+                document.getElementById('detail-title').innerText = product.name;
+                document.getElementById('detail-price').innerText = product.price + ' ₽';
+                document.getElementById('detail-img').innerHTML = `<img src="${product.img}" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+                
+                // Если уже в корзине — ставим текущее количество, иначе 1
+                const inCart = cart.find(item => item.id === id);
+                document.getElementById('detail-qty').value = inCart ? inCart.qty : 1;
+    
+                document.getElementById('catalog-section').style.display = 'none';
+                document.getElementById('product-detail-page').style.display = 'block';
+                window.scrollTo(0,0);
+            }
+    
+            function showCatalog() {
+                document.getElementById('product-detail-page').style.display = 'none';
+                document.getElementById('catalog-section').style.display = 'block';
+            }
+    
+            // Управление количеством
+            function changeQty(delta) {
+                const input = document.getElementById('detail-qty');
+                let val = parseInt(input.value) + delta;
+                if (val < 1) val = 1;
+                input.value = val;
+                
+                // Если товар уже в корзине, обновляем её сразу для синхронизации
+                const item = cart.find(i => i.id === currentProductId);
+                if(item) {
+                    item.qty = val;
+                    renderCart();
+                }
+            }
+    
+            // Добавление / Обновление в корзине
+            function addToCart() {
+                const product = productsData.find(p => p.id === currentProductId);
+                const qty = parseInt(document.getElementById('detail-qty').value);
+                
+                const existingIndex = cart.findIndex(item => item.id === currentProductId);
+                if (existingIndex > -1) {
+                    cart[existingIndex].qty = qty;
+                } else {
+                    cart.push({ ...product, qty: qty });
+                }
+                renderCart();
+            }
+    
+            function removeFromCart(id) {
+                cart = cart.filter(i => i.id !== id);
+                renderCart();
+            }
+    
+            // Отрисовка корзины
+            function renderCart() {
+                const list = document.getElementById('cart-items-list');
+                const totalEl = document.getElementById('cart-total-price');
+                
+                if (cart.length === 0) {
+                    list.innerHTML = '<p style="color: #999; text-align: center;">Ваша корзина пуста</p>';
+                    totalEl.innerText = '0 ₽';
+                    return;
+                }
+    
+                let total = 0;
+                list.innerHTML = cart.map(item => {
+                    total += item.price * item.qty;
+                    return `
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #f4f4f4; padding-bottom: 10px;">
+                        <div style="flex: 1;">
+                            <a href="javascript:void(0)" onclick="openProduct(${item.id})" style="text-decoration: none; color: #333; font-weight: bold; font-family: 'Oswald'; display: block;">${item.name}</a>
+                            <div style="font-size: 14px; color: #777;">${item.price} ₽ x ${item.qty}</div>
+                        </div>
+                        <button onclick="removeFromCart(${item.id})" style="background: #ffeded; border: none; color: #ff0000; cursor: pointer; padding: 5px 8px; border-radius: 50%; font-weight: bold;">×</button>
+                    </div>`;
+                }).join('');
+                
+                totalEl.innerText = total + ' ₽';
+            }
+    
+            // Запуск при старте
+            renderCatalog();
+        </script>
+    </main>
+</section>
+    
+        <!-- БЛОГ (Калькуляторы) -->
+        <section id="blog-page" class="page-section" style="display:none; padding: 20px;">
+            <h1 style="font-family: 'Oswald'; text-align: center; margin-bottom: 30px;">Фитнес-помощник</h1>
+        
+            <!-- Главный контейнер сетки -->
+            <div class="blog-grid" style="display: flex; gap: 30px; max-width: 1200px; margin: 0 auto; align-items: flex-start; flex-wrap: wrap;">
+                
+                <!-- ЛЕВАЯ КОЛОНКА: Калькуляторы (сужаем) -->
+                <div class="side-calcs" style="flex: 0 0 300px; min-width: 280px; position: sticky; top: 130px;">
+                    <div class="calc-card" style="margin-bottom: 20px;">
+                        <h2>Индекс массы тела</h2>
+                        <input type="number" id="bmi-w" placeholder="Вес (кг)" style="width:48%; margin-right:2%;">
+                        <input type="number" id="bmi-h" placeholder="Рост (см)" style="width:48%;">
+                        <button class="btn-calc" style="margin-top:15px; width: 100%;" onclick="calcBMI()">Рассчитать</button>
+                        <div id="bmi-res" style="margin-top:10px; font-weight:700;"></div>
+                    </div>
+        
+                    <div class="calc-card">
+                        <h2>Расчет КБЖУ порции</h2>
+                        <input type="number" id="p-weight" placeholder="Вес порции (г)" style="margin-bottom:10px; width:100%;">
+                        <div style="display: flex; gap: 5px;">
+                            <input type="number" id="p-b" placeholder="Б" style="width: 33%">
+                            <input type="number" id="p-z" placeholder="Ж" style="width: 33%">
+                            <input type="number" id="p-u" placeholder="У" style="width: 33%">
+                        </div>
+                        <button class="btn-calc" style="margin-top:15px; width: 100%;" onclick="calcPFC()">Посчитать</button>
+                        <div id="pfc-res" style="margin-top:10px; font-weight:700;"></div>
+                    </div>
+                </div>
+        
+                <!-- ПРАВАЯ КОЛОНКА: Статьи (тянутся вниз) -->
+                <div class="articles-column" style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 20px;">
+                    <script>
+                    function openArticle(element) {
+                        // 1. Скрываем колонку со списком всех статей
+                        document.querySelector('.articles-column').style.display = 'none';
+                        
+                        // 2. Получаем контент из кликнутой карточки
+                        const content = element.innerHTML;
+                        
+                        // 3. Вставляем контент в блок просмотра и показываем его
+                        document.getElementById('full-article-content').innerHTML = content;
+                        document.getElementById('full-article-view').style.display = 'block';
+                        
+                        window.scrollTo(0, 0);
+                    }
+                    
+                    function closeArticle() {
+                        // Возвращаем всё назад
+                        document.getElementById('full-article-view').style.display = 'none';
+                        document.querySelector('.articles-column').style.display = 'flex';
+                    }
+                    </script>
+                    <!-- Блок статьи (копируй его целиком) -->
+                    <article class="post-card" style="background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+                        <h2 style="font-family: 'Oswald'; margin-top: 0;">Как начать тренировки дома</h2>
+                        <p style="font-family: 'Open Sans'; line-height: 1.6;">Здесь будет ваш текст про фитнес. Блок автоматически подстроится под высоту текста. Вы можете добавлять сюда картинки, списки и подзаголовки.</p>
+                        <img src= "data:image/jpeg;base64,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" alt = "Спорт">
+                    </article>
+        
+                    <!-- Еще один блок статьи для примера -->
+                    <article class="post-card" onclick="openArticle(this)" style="background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; cursor: pointer;">
+                        <h2 style="font-family: 'Oswald'; margin-top: 0;">Питание до и после зала</h2>
+                        <p style="font-family: 'Open Sans'; line-height: 1.6;">ООООООЧЕНЬ большая и интеерсная статья о чем-то очень важном о спорте</p>
+                    </article>
+
+                    <article class="post-card" style="background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+                        <h2 style="font-family: 'Oswald'; margin-top: 0;">Как начать тренировки дома</h2>
+                        <p style="font-family: 'Open Sans'; line-height: 1.6;">Здесь будет ваш текст про фитнес. Блок автоматически подстроится под высоту текста. Вы можете добавлять сюда картинки, списки и подзаголовки.</p>
+                    </article>
+        
+                    <!-- Еще один блок статьи для примера -->
+                    <article class="post-card" style="background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+                        <h2 style="font-family: 'Oswald'; margin-top: 0;">Питание до и после зала</h2>
+                        <p style="font-family: 'Open Sans'; line-height: 1.6;">Просто копируйте этот `article` целиком, чтобы добавить новую запись в блог.</p>
+                    </article>
+
+                    <article class="post-card" style="background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+                        <h2 style="font-family: 'Oswald'; margin-top: 0;">Как начать тренировки дома</h2>
+                        <p style="font-family: 'Open Sans'; line-height: 1.6;">Здесь будет ваш текст про фитнес. Блок автоматически подстроится под высоту текста. Вы можете добавлять сюда картинки, списки и подзаголовки.</p>
+                    </article>
+        
+                    <!-- Еще один блок статьи для примера -->
+                    <article class="post-card" style="background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+                        <h2 style="font-family: 'Oswald'; margin-top: 0;">Питание до и после зала</h2>
+                        <p style="font-family: 'Open Sans'; line-height: 1.6;">Просто копируйте этот `article` целиком, чтобы добавить новую запись в блог.</p>
+                    </article>
+
+                    <article class="post-card" style="background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+                        <h2 style="font-family: 'Oswald'; margin-top: 0;">Как начать тренировки дома</h2>
+                        <p style="font-family: 'Open Sans'; line-height: 1.6;">Здесь будет ваш текст про фитнес. Блок автоматически подстроится под высоту текста. Вы можете добавлять сюда картинки, списки и подзаголовки.</p>
+                    </article>
+        
+                    <!-- Еще один блок статьи для примера -->
+                    <article class="post-card" style="background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+                        <h2 style="font-family: 'Oswald'; margin-top: 0;">Питание до и после зала</h2>
+                        <p style="font-family: 'Open Sans'; line-height: 1.6;">Просто копируйте этот `article` целиком, чтобы добавить новую запись в блог.</p>
+                    </article>
+        
+
+                   
+
+                </div>
+                <div id="full-article-view" style="display: none; flex: 1; background: #fff; padding: 30px; border-radius: 12px; border: 1px solid #eee;">
+                    <button onclick="closeArticle()" style="background: none; border: none; cursor: pointer; font-family: 'Oswald'; font-size: 18px; margin-bottom: 20px; color: #ff6600;">
+                        ← Назад к статьям
+                    </button>
+                    <div id="full-article-content"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- КОНТАКТЫ -->
+        <section id="contacts-page" class="page-section" style="display:none; padding: 20px;">
+            <div class="contacts-wrapper" style="display: flex; gap: 40px; max-width: 1200px; margin: 0 auto; align-items: flex-start; flex-wrap: wrap;">
+                
+                <!-- ЛЕВАЯ СТОРОНА: Карта -->
+                <div class="map-container" style="flex: 1; min-width: 300px; height: 450px; border-radius: 12px; overflow: hidden; border: 1px solid #ddd;">
+                    <!-- Вставь ниже Iframe из Яндекс.Карт или Google Maps -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2644.7496718152047!2d30.32993565729568!3d60.052288439496856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1776241188677!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0" 
+                            allowfullscreen="true" 
+                            style="position:relative;">
+                    </iframe>
+                </div>
+        
+                <!-- ПРАВАЯ СТОРОНА: Информация (твоя существующая) -->
+                <div class="contacts-container" style="flex: 0 0 350px; min-width: 300px;">
+                    <h1 style="font-family: 'Oswald'; margin-top: 0;">Наши контакты</h1>
+                    <p style="font-family: 'Open Sans'; color: #666;">Мы всегда на связи, чтобы помочь вам с выбором!</p>
+                    
+                    <div class="contact-item" style="margin-bottom: 10px; font-weight: bold;"> +7 (999) 000-11-22</div>
+                    <div class="contact-item" style="margin-bottom: 10px;"> support@fitlife.ru</div>
+                    <div class="contact-item" style="margin-bottom: 10px;"> @fitlife_tg_bot</div>
+                    <div class="contact-item" style="margin-bottom: 20px;"> г. Москва, ул. Атлетов, д. 15</div>
+                    
+                    <div style="padding: 20px; background: #fff8f5; border-radius: 8px; border-left: 4px solid #ff4d00;">
+                        <strong>Режим работы:</strong><br>
+                        Ежедневно с 09:00 до 21:00
+                    </div>
+                </div>
+        
+            </div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <p>&copy; 2024 FitLife. Акцент на результат.</p>
+    </footer>
+</div>
+<script>
+function showPage(pageId) {
+    // 1. Скрываем вообще все основные секции (Магазин, Блог, Контакты)
+    // Убедитесь, что у секций Блога и Контактов есть класс "page-section"
+    document.querySelectorAll('.page-section').forEach(section => {
+        section.style.display = 'none';
+        section.classList.remove('active');
+    });
+
+    // 2. Если мы переходим в Магазин
+    if (pageId === 'shop') {
+        document.getElementById('shop-page').style.display = 'block';
+        document.getElementById('shop-page').classList.add('active');
+        // Принудительно показываем каталог (на случай, если были в деталях товара)
+        backToCatalog(); 
+    } 
+    // 3. Если переходим в Блог или Контакты
+    else {
+        const target = document.getElementById(pageId + '-page');
+        if (target) {
+            target.style.display = 'block';
+            target.classList.add('active');
+        }
+    }
+
+    // 4. Скролл в начало страницы
+    window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
