@@ -1,0 +1,79 @@
+.product-grid {
+    display: grid;
+    /* По умолчанию 5 колонок */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 1.5vw;
+    padding: 20px;
+}
+
+/* 2. СТРОГИЕ ПРОПОРЦИИ КАРТОЧКИ */
+.product-card {
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    /* Карточка всегда 3:4 */
+    aspect-ratio: 3 / 4; 
+    background: #fff;
+    overflow: hidden;
+}
+
+/* Область ФОТО: фиксированно занимает 70% высоты всей карточки */
+.product-photo {
+    height: 70%; 
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-photo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Картинка не растянется и не обрежется */
+}
+
+/* Область ТЕКСТА: всегда 30% высоты */
+.product-info {
+    height: 30%;
+    background-color: rgb(255, 196, 32);
+    border-top: 1px solid #333;
+    padding: 5%; /* Отступы в процентах для адаптации */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* 3. ПОСТОЯННО АДАПТИВНЫЙ ТЕКСТ */
+.product-info p {
+    margin: 0;
+    font-family: 'Title', sans-serif;
+    /* Шрифт напрямую зависит от ширины экрана (2% от ширины) */
+    font-size: 1.8vw; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 4. КОНТРОЛЬ КОЛИЧЕСТВА КАРТОЧЕК (БРЕЙКПОИНТЫ) */
+
+/* Планшеты: строго 4 колонки, текст чуть крупнее относительно экрана */
+@media (max-width: 1024px) {
+    .product-grid { grid-template-columns: repeat(4, 1fr); }
+    .product-info p { font-size: 2.2vw; }
+}
+
+/* Маленькие планшеты: строго 3 колонки */
+@media (max-width: 768px) {
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
+    .product-info p { font-size: 3vw; }
+}
+
+/* Телефоны: строго 2 колонки */
+@media (max-width: 480px) {
+    .product-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;
+    }
+    .product-info p { font-size: 4vw; } /* На телефоне текст должен быть читаемым */
+}
